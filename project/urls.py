@@ -23,5 +23,10 @@ urlpatterns = [
     path('', views.landing, name='landing'),
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
-    path('Register_data/', views.Register_data, name='Register_data')
+    path('Register_data/', views.Register_data, name='Register_data'),
+    path('login_data/', views.login_data, name='login_data'),
+    path('userdash/', views.userdash, name='userdash'),
+    path('logout/', views.logout, name='logout'),
+    path('logout/', views.logout, name='logout'),
+    path('admindash/', views.admindash, name='admindash')
 ]
