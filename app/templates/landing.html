@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Django Website</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-nav {
+      list-style: none;
+      display: flex;
+      margin-left: 900px;
+      padding: 0;
+    }
+
+    .navbar-nav li {
+      margin-left: 25px;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #00adb5;
+    }
+
+    .container {
+      width: 90%;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="">School Management</a>
+
+      <ul class="navbar-nav">
+
+        <li>
+          <a class="nav-link" href="{% url 'landing' %}">Home</a>
+        </li>
+
+        <li>
+          <a class="nav-link" href="">About</a>
+        </li>
+
+        <li>
+          <a class="nav-link" href="">Services</a>
+        </li>
+
+        <li>
+          <a class="nav-link" href="">Gallery</a>
+        </li>
+
+        <li>
+          <a class="nav-link" href="{% url 'register' %}">Registration</a>
+        </li>
+
+        <li>
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    {% block content %}
+    <h1>Home Page</h1>
+    {% endblock %}
+  </div>
+
+</body>
+
+</html>
