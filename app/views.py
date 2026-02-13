@@ -83,5 +83,6 @@ def userdash(req):
 def logout(req):
     if 'user_id' in req.session:
         req.session.flush()
+        return redirect('login')
     return redirect('login')
     
