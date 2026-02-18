@@ -27,6 +27,9 @@ urlpatterns = [
     path('login_data/', views.login_data, name='login_data'),
     path('userdash/', views.userdash, name='userdash'),
     path('logout/', views.logout, name='logout'),
-    path('logout/', views.logout, name='logout'),
-    path('admindash/', views.admindash, name='admindash')
+    path('forgot_password/', views.forgot_password, name='forgot_password'),
+    path('admindash/', views.admindash, name='admindash'),
+    path('forgot_password/', views.forgot_password, name='forgot_password'),
+    path('forgot_data/', views.forgot_data, name='forgot_data'),
+    path('change_pass/', views.change_pass, name='change_pass'),
 ]

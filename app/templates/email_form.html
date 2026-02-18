@@ -1,0 +1,9 @@
+<form action="{% url 'forgot_data' %}" method="POST">
+    <div class="form-group">
+        {% csrf_token %}
+        <label>Email</label>
+        <input type="email" name="email" required>
+        <button type="submit" class="btn">Send OTP</button><br>
+        {{msg}}
+    </div>
+</form>

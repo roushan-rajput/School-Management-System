@@ -1,5 +1,8 @@
 from django.shortcuts import render,redirect
 from .models import Student
+from django.core.mail import send_mail
+import random
+
 
 # Create your views here.
 def landing(req):
@@ -31,6 +34,14 @@ def Register_data(req):
             if p == cp:
                 Student.objects.create(
                     Name=n, Email=e,City=c,Age=a,Contact=co,Image=i,Password=p, Cpassword=cp,)
+                
+                send_mail(
+                    'Admission In the CYBROM school',
+                    f'This information Regardings your School Credentials: Name:{n} ,Email:{e} ,City:{c} ,Contact:{co} ,Password:{p}',
+                    "from@example.com",
+                    {e},
+                    fail_silently=False,
+                )
                 return redirect('login')
 
             else:
@@ -67,6 +78,33 @@ def login_data(req):
             msg='Email & password not match'
             return render(req,'login.html',{'pmsg':msg})
     return render(req,'login.html')
+
+
+def forgot_password(req):
+    return render(req,'email_form.html')
+
+def forgot_data(req):
+    if req.method=='POST':
+        e=req.POST.get('email')
+        user=Student.objects.filter(Email=e)
+        if not user:
+            msg="Please Enter Valid Email"
+            return render(req,'email_form.html',{'msg':msg})
+        else:
+            otp=random.randint(111111,999999)
+            req.session['otp']=otp
+            req.session['email']=e
+            send_mail(
+                    'OTP from the CYBROM school Management',
+                    f'This information Regardings your OTP For  the Forgot Your Password is :{otp}',
+                    "from@example.com",
+                    {e},
+                    fail_silently=False,
+                )
+            return render(req,'change_pass.html')
+        
+def change_pass(req):
+    return render(req,'change_pass.html')
 
 def userdash(req):
     return render(req,'userdash.html')
