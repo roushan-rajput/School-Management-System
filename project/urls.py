@@ -32,4 +32,5 @@ urlpatterns = [
     path('forgot_password/', views.forgot_password, name='forgot_password'),
     path('forgot_data/', views.forgot_data, name='forgot_data'),
     path('change_pass/', views.change_pass, name='change_pass'),
+    path('addstu/', views.addstu, name='addstu'),
 ]

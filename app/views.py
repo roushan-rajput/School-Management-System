@@ -118,6 +118,10 @@ def userdash(req):
      userdata=Student.objects.get(id=id)
      return render(req,'userdash.html',{'data':'userdata'})
 
+def addstu(req):
+    
+    return render(req,'admindash.html')
+
 def logout(req):
     if 'user_id' in req.session:
         req.session.flush()
