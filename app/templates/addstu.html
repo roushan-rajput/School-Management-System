@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Add Student</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+        
+        <label>Name:</label>
+        <input type="text" name="name" placeholder="Enter student name" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter email" required>
+
+        <label>City:</label>
+        <input type="text" name="city" placeholder="Enter city" required>
+
+        <label>Contact:</label>
+        <input type="tel" name="contact" placeholder="Enter contact number" required>
+
+        <label>Upload Image:</label>
+        <input type="file" name="image" accept="image/*" required>
+
+        <button type="submit">Add Student</button>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -3,7 +3,6 @@ from .models import Student
 from django.core.mail import send_mail
 import random
 
-
 # Create your views here.
 def landing(req):
     return render(req,'landing.html')
@@ -79,7 +78,6 @@ def login_data(req):
             return render(req,'login.html',{'pmsg':msg})
     return render(req,'login.html')
 
-
 def forgot_password(req):
     return render(req,'email_form.html')
 
@@ -96,7 +94,7 @@ def forgot_data(req):
             req.session['email']=e
             send_mail(
                     'OTP from the CYBROM school Management',
-                    f'This information Regardings your OTP For  the Forgot Your Password is :{otp}',
+                    f'This information Regardings your OTP For the Forgot Your Password is :{otp}',
                     "from@example.com",
                     {e},
                     fail_silently=False,
@@ -119,12 +117,10 @@ def userdash(req):
      return render(req,'userdash.html',{'data':'userdata'})
 
 def addstu(req):
-    
-    return render(req,'admindash.html')
+    return render(req,'addstu.html')
 
 def logout(req):
     if 'user_id' in req.session:
         req.session.flush()
         return redirect('login')
     return redirect('login')
-    
